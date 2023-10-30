@@ -1,0 +1,48 @@
+EventScript_SetDefeatedEliteFourFlagsVars:: @ 81A651A
+	clearflag FLAG_HIDE_MASTER_TRAINERS
+	clearflag FLAG_HIDE_POSTGAME_GOSSIPERS
+	call EventScript_ResetEliteFour
+	special Script_UpdateTrainerFanClubGameClear
+	call_if_unset FLAG_SYS_RECEIVED_EXTENDED_DEX, EventScript_SetReadyTryGiveNationalDexScene
+	call EventScript_ResetLegendaries
+	return
+
+EventScript_SetReadyTryGiveNationalDexScene:: @ 81A653B
+	setvar VAR_MAP_SCENE_PALLET_TOWN_OAK, 2
+	return
+
+EventScript_ResetLegendaries:: @ 81A6541
+	clearflag FLAG_LUGIA_FLEW_AWAY
+	clearflag FLAG_HO_OH_FLEW_AWAY
+	clearflag FLAG_DEOXYS_FLEW_AWAY
+	clearflag FLAG_MEW_FLEW_AWAY
+	clearflag FLAG_MEWTWO_FLEW_AWAY
+	clearflag FLAG_ARTICUNO_FLEW_AWAY
+	clearflag FLAG_ZAPDOS_FLEW_AWAY
+	clearflag FLAG_MOLTRES_FLEW_AWAY
+	clearflag FLAG_ROUTE_12_SNORLAX_RETURNED_TO_MOUNTAINS
+	clearflag FLAG_ROUTE_16_SNORLAX_RETURNED_TO_MOUNTAINS
+	clearflag FLAG_DEFEATED_LATIOS
+	clearflag FLAG_DEFEATED_LATIAS
+	clearflag FLAG_DEFEATED_SUDOWOODO
+	special InitRoamer
+	return
+
+EventScript_ResetEliteFourEnd:: @ 81A654B
+	call EventScript_ResetEliteFour
+	end
+
+EventScript_ResetEliteFour:: @ 81A6551
+	clearflag FLAG_DEFEATED_LORELEI
+	clearflag FLAG_DEFEATED_BRUNO
+	clearflag FLAG_DEFEATED_AGATHA
+	clearflag FLAG_DEFEATED_LANCE
+	clearflag FLAG_DEFEATED_CHAMP
+	cleartrainerflag TRAINER_CHAMPION_FIRST_SQUIRTLE
+	cleartrainerflag TRAINER_CHAMPION_FIRST_BULBASAUR
+	cleartrainerflag TRAINER_CHAMPION_FIRST_CHARMANDER
+	cleartrainerflag TRAINER_CHAMPION_REMATCH_SQUIRTLE
+	cleartrainerflag TRAINER_CHAMPION_REMATCH_BULBASAUR
+	cleartrainerflag TRAINER_CHAMPION_REMATCH_CHARMANDER
+	setvar VAR_MAP_SCENE_POKEMON_LEAGUE, 0
+	return

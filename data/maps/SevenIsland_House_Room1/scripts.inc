@@ -1,0 +1,404 @@
+.equ LOCALID_OLD_WOMAN, 1
+.equ LOCALID_SPEAROW, 2
+
+.equ SET_SPEAROW_STATE, 0
+.equ SET_TOLD_FAMECHECKER, 1
+.equ SET_VISITOR_STATE, 2
+.equ SET_LEVEL_GROWTH, 3
+.equ CHECK_SPEAROW_STATE, 4
+.equ CHECK_TOLD_FAMECHECKER, 5
+.equ CHECK_VISITOR_STATE, 6
+.equ CHECK_LEVEL_GROWTH, 7
+.equ SET_BOXES_MOVED, 8
+.equ CHECK_BOXES_MOVED, 9
+.equ CHECK_ANY_VISITORS, 10
+.equ CHECK_ALL_TOLD, 11
+.equ CREATE_VISITOR_STRING, 12
+
+.equ TYPE, VAR_0x8003
+.equ ARGUMENT, VAR_0x8004
+.equ LEADER_READY, VAR_0x8006
+
+SevenIsland_House_Room1_MapScripts:: @ 817088A
+	map_script MAP_SCRIPT_ON_TRANSITION, SevenIsland_House_Room1_OnTransition
+	.byte 0
+
+SevenIsland_House_Room1_OnTransition:: @ 8170895
+	setvar LEADER_READY, 0
+	setvar TYPE, CHECK_BOXES_MOVED
+	callnative UseBattleHouseVar
+	compare VAR_RESULT, 1
+	call_if_eq SevenIsland_House_Room1_EventScript_SetTrainerVisitingLayout
+	setvar TYPE, CHECK_SPEAROW_STATE
+	callnative UseBattleHouseVar
+	compare VAR_RESULT, 1
+	call_if_eq SevenIsland_House_Room1_EventScript_HideSpearow
+	setvar TYPE, CHECK_ALL_TOLD
+	callnative UseBattleHouseVar
+	compare VAR_RESULT, 7
+	call_if_eq SevenIsland_House_Room1_EventScript_WalkSpearow
+	end
+
+SevenIsland_House_Room1_EventScript_SetTrainerVisitingLayout:: @ 81708AF
+	setmaplayoutindex LAYOUT_SEVEN_ISLAND_HOUSE_ROOM1_DOOR_OPEN
+	return
+
+SevenIsland_House_Room1_EventScript_HideSpearow::
+	setflag FLAG_TEMP_1
+	return
+
+SevenIsland_House_Room1_EventScript_WalkSpearow::
+	setobjectmovementtype LOCALID_SPEAROW, MOVEMENT_TYPE_WANDER_AROUND
+	return
+
+SevenIsland_House_Room1_EventScript_OldWoman:: @ 8170958
+	@ getnumberstring 0, VAR_BATTLE_HOUSE2
+	@ getnumberstring 1, VAR_BATTLE_HOUSE2
+	@ msgbox TESTTESTTEST
+	lock
+	faceplayer
+	setvar TYPE, CHECK_SPEAROW_STATE
+	callnative UseBattleHouseVar
+	compare VAR_RESULT, 1
+	goto_if_eq SevenIsland_House_Room1_EventScript_SpearowGone
+	setvar TYPE, CHECK_BOXES_MOVED
+	callnative UseBattleHouseVar
+	compare VAR_RESULT, 1
+	goto_if_eq SevenIsland_House_Room1_EventScript_OldWomanBasementOpen
+	msgbox SevenIsland_House_Room1_Text_OnlyEnjoymentWatchingBattles
+	textcolor 3
+	msgbox SevenIsland_House_Room1_Text_ShowFameChecker, MSGBOX_YESNO
+	compare VAR_RESULT, YES
+	goto_if_eq SevenIsland_House_Room1_EventScript_ShowingFameChecker
+	textcolor 1
+	msgbox SevenIsland_House_Room1_Text_NoShowFameChecker
+	release
+	end
+
+SevenIsland_House_Room1_EventScript_ShowingFameChecker::
+	textcolor 1
+	message SevenIsland_House_Room1_Text_ManyTrainersWhich
+	waitmessage
+	setvar VAR_0x8004, LISTMENU_GYM_LEADERS
+	special ListMenu
+	waitstate
+	switch VAR_RESULT
+	case 0, SevenIsland_House_Room1_EventScript_Brock
+	case 1, SevenIsland_House_Room1_EventScript_Misty
+	case 2, SevenIsland_House_Room1_EventScript_LtSurge
+	case 3, SevenIsland_House_Room1_EventScript_Erika
+	case 4, SevenIsland_House_Room1_EventScript_Koga
+	case 5, SevenIsland_House_Room1_EventScript_Sabrina
+	case 6, SevenIsland_House_Room1_EventScript_Blaine
+	case 8, SevenIsland_House_Room1_EventScript_RefuseToSelectLeader
+	case 127, SevenIsland_House_Room1_EventScript_RefuseToSelectLeader
+	end
+
+SevenIsland_House_Room1_EventScript_Brock::
+	setvar 0x8004, FAMECHECKER_BROCK
+	getstring 0, gText_Brock
+	getstring 1, SevenIsland_House_Room1_Text_HeString
+	getstring 2, gFameCheckerFlavorTextOriginLocation_Brock0
+	callnative CheckFilledFameCheckerFor0x8004
+	compare VAR_RESULT, TRUE
+	goto_if_eq SevenIsland_House_Room1_EventScript_FullFamecheckerForPerson
+	goto SevenIsland_House_Room1_EventScript_NotFullFamecheckerForPerson
+
+SevenIsland_House_Room1_EventScript_Misty::
+	setvar 0x8004, FAMECHECKER_MISTY
+	getstring 0, gText_Misty
+	getstring 1, SevenIsland_House_Room1_Text_SheString
+	getstring 2, gFameCheckerFlavorTextOriginLocation_Misty0
+	callnative CheckFilledFameCheckerFor0x8004
+	compare VAR_RESULT, TRUE
+	goto_if_eq SevenIsland_House_Room1_EventScript_FullFamecheckerForPerson
+	goto SevenIsland_House_Room1_EventScript_NotFullFamecheckerForPerson
+
+SevenIsland_House_Room1_EventScript_LtSurge::
+	setvar 0x8004, FAMECHECKER_LTSURGE
+	getstring 0, gText_LtSurge
+	getstring 1, SevenIsland_House_Room1_Text_HeString
+	getstring 2, gFameCheckerFlavorTextOriginLocation_LtSurge0
+	callnative CheckFilledFameCheckerFor0x8004
+	compare VAR_RESULT, TRUE
+	goto_if_eq SevenIsland_House_Room1_EventScript_FullFamecheckerForPerson
+	goto SevenIsland_House_Room1_EventScript_NotFullFamecheckerForPerson
+
+SevenIsland_House_Room1_EventScript_Erika::
+	setvar 0x8004, FAMECHECKER_ERIKA
+	getstring 0, gText_Erika
+	getstring 1, SevenIsland_House_Room1_Text_SheString
+	getstring 2, gFameCheckerFlavorTextOriginLocation_Erika0
+	callnative CheckFilledFameCheckerFor0x8004
+	compare VAR_RESULT, TRUE
+	goto_if_eq SevenIsland_House_Room1_EventScript_FullFamecheckerForPerson
+	goto SevenIsland_House_Room1_EventScript_NotFullFamecheckerForPerson
+
+SevenIsland_House_Room1_EventScript_Koga::
+	setvar 0x8004, FAMECHECKER_KOGA
+	getstring 0, gText_Koga
+	getstring 1, SevenIsland_House_Room1_Text_HeString
+	getstring 2, gFameCheckerFlavorTextOriginLocation_Koga0
+	callnative CheckFilledFameCheckerFor0x8004
+	compare VAR_RESULT, TRUE
+	goto_if_eq SevenIsland_House_Room1_EventScript_FullFamecheckerForPerson
+	goto SevenIsland_House_Room1_EventScript_NotFullFamecheckerForPerson
+
+SevenIsland_House_Room1_EventScript_Sabrina::
+	setvar 0x8004, FAMECHECKER_SABRINA
+	getstring 0, gText_Sabrina
+	getstring 1, SevenIsland_House_Room1_Text_SheString
+	getstring 2, gFameCheckerFlavorTextOriginLocation_Sabrina0
+	callnative CheckFilledFameCheckerFor0x8004
+	compare VAR_RESULT, TRUE
+	goto_if_eq SevenIsland_House_Room1_EventScript_FullFamecheckerForPerson
+	goto SevenIsland_House_Room1_EventScript_NotFullFamecheckerForPerson
+
+SevenIsland_House_Room1_EventScript_Blaine::
+	setvar 0x8004, FAMECHECKER_BLAINE
+	getstring 0, gText_Blaine
+	getstring 1, SevenIsland_House_Room1_Text_HeString
+	getstring 2, gFameCheckerFlavorTextOriginLocation_Blaine0
+	callnative CheckFilledFameCheckerFor0x8004
+	compare VAR_RESULT, TRUE
+	goto_if_eq SevenIsland_House_Room1_EventScript_FullFamecheckerForPerson
+	goto SevenIsland_House_Room1_EventScript_NotFullFamecheckerForPerson
+
+SevenIsland_House_Room1_EventScript_RefuseToSelectLeader::
+	msgbox SevenIsland_House_Room1_Text_NoShowFameChecker
+	release
+	end
+
+SevenIsland_House_Room1_EventScript_FullFamecheckerForPerson::
+	setvar TYPE, CHECK_TOLD_FAMECHECKER
+	@ ARGUMENT already set
+	callnative UseBattleHouseVar
+	compare VAR_RESULT, 1
+	goto_if_eq SevenIsland_House_Room1_EventScript_AlreadyShownPerson
+	msgbox SevenIsland_House_Room1_Text_FullFamecheckerForPerson
+	compare VAR_BATTLE_HOUSE, 1
+	goto_if_ge SevenIsland_House_Room1_EventScript_AlreadyUnlockedBasement
+	msgbox SevenIsland_House_Room1_Text_FirstFullFamecheckerPerson
+SevenIsland_House_Room1_SendOutSpearow::
+	turnobject LOCALID_OLD_WOMAN, DIR_EAST
+	msgbox SevenIsland_House_Room1_Text_CallSpearow
+	lockall
+	turnobject LOCALID_SPEAROW, DIR_WEST
+	waitse
+	playmoncry SPECIES_SPEAROW, 0
+	msgbox SevenIsland_House_Room1_Text_Spearow
+	waitmoncry
+	release
+	applymovement LOCALID_SPEAROW, SevenIsland_House_Room1_Movement_SpearowToTable
+	waitmovement 0
+	playse SE_LEDGE
+	applymovement LOCALID_SPEAROW, SevenIsland_House_Room1_Movement_SpearowFinishToTable
+	waitmovement 0
+	msgbox SevenIsland_House_Room1_Text_DeliverToLeader
+	release
+	waitse
+	playmoncry SPECIES_SPEAROW, 0
+	msgbox SevenIsland_House_Room1_Text_Spearow
+	waitmoncry
+	release
+	playse SE_LEDGE
+	applymovement LOCALID_SPEAROW, SevenIsland_House_Room1_Movement_SpearowExitHouse
+	waitmovement 0
+	playse SE_EXIT
+	removeobject LOCALID_SPEAROW
+	faceplayer
+	compare VAR_BATTLE_HOUSE, 1
+	goto_if_ge SevenIsland_House_Room1_EventScript_SpearowLeftAlreadyUnlockedBasement
+	setvar TYPE, SET_SPEAROW_STATE
+	callnative UseBattleHouseVar
+	setvar TYPE, SET_TOLD_FAMECHECKER
+	@ ARGUMENT already set
+	callnative UseBattleHouseVar
+	msgbox SevenIsland_House_Room1_Text_FirstTakeTime
+	release
+	end
+
+SevenIsland_House_Room1_EventScript_NotFullFamecheckerForPerson::
+	msgbox SevenIsland_House_Room1_Text_NotFullFamecheckerForPerson
+	release
+	end
+
+SevenIsland_House_Room1_Movement_SpearowToTable::
+	walk_fast_up
+	walk_fast_up
+	walk_fast_left
+	walk_fast_left
+	step_end
+
+SevenIsland_House_Room1_Movement_SpearowFinishToTable::
+	jump_left
+	walk_left
+	step_end
+
+SevenIsland_House_Room1_Movement_SpearowExitHouse::
+	jump_2_down
+	walk_fast_left
+	walk_fast_down
+	delay_8
+	set_invisible
+	step_end
+
+SevenIsland_House_Room1_EventScript_AlreadyShownPerson::
+	msgbox SevenIsland_House_Room1_Text_AlreadyShownPerson
+	goto SevenIsland_House_Room1_EventScript_ShowingFameChecker
+
+SevenIsland_House_Room1_EventScript_AlreadyUnlockedBasement::
+	msgbox SevenIsland_House_Room1_Text_InviteBasementOpen
+	goto SevenIsland_House_Room1_SendOutSpearow
+
+SevenIsland_House_Room1_EventScript_SpearowLeftAlreadyUnlockedBasement::
+	setvar TYPE, SET_SPEAROW_STATE
+	callnative UseBattleHouseVar
+	setvar TYPE, SET_TOLD_FAMECHECKER
+	@ ARGUMENT already set
+	callnative UseBattleHouseVar
+	msgbox SevenIsland_House_Room1_Text_TakeTime
+	release
+	end
+
+SevenIsland_House_Room1_EventScript_SpearowGone::
+	msgbox SevenIsland_House_Room1_Text_SpearowNotBackYet
+	release
+	end
+
+SevenIsland_House_Room1_EventScript_Spearow::
+	lock
+	faceplayer
+	waitse
+	playmoncry SPECIES_SPEAROW, 0
+	msgbox SevenIsland_House_Room1_Text_Spearow
+	waitmoncry
+	release
+	end
+
+SevenIsland_House_Room1_EventScript_OldWomanBasementOpen::
+	setvar TYPE, CHECK_ALL_TOLD
+	callnative UseBattleHouseVar
+	copyvar VAR_0x8000, VAR_RESULT
+	setvar TYPE, CHECK_ANY_VISITORS
+	callnative UseBattleHouseVar
+	compare VAR_0x8000, 7
+	goto_if_ge SevenIsland_House_Room1_EventScript_OldWomanToldAll
+	compare VAR_RESULT, 0
+	goto_if_eq SevenIsland_House_Room1_EventScript_OldWomanNoVisitors
+	compare VAR_RESULT, 1
+	goto_if_eq SevenIsland_House_Room1_EventScript_OldWomanOneVisitor
+	switch VAR_RESULT
+	case 2, SevenIsland_House_Room1_EventScript_Buffer2
+	case 3, SevenIsland_House_Room1_EventScript_Buffer3
+	case 4, SevenIsland_House_Room1_EventScript_Buffer4
+	case 5, SevenIsland_House_Room1_EventScript_Buffer5
+	case 6, SevenIsland_House_Room1_EventScript_Buffer6
+	case 7, SevenIsland_House_Room1_EventScript_Buffer7
+	goto SevenIsland_House_Room1_EventScript_OldWomanMultiVisitors
+
+SevenIsland_House_Room1_EventScript_OldWomanNoVisitors::
+	msgbox SevenIsland_House_Room1_Text_OldWomanNoVisitors
+	goto SevenIsland_House_Room1_EventScript_ShowFameCheckerQuestion
+	end
+
+SevenIsland_House_Room1_EventScript_OldWomanOneVisitor::
+	msgbox SevenIsland_House_Room1_Text_OldWomanOneVisitor
+	goto SevenIsland_House_Room1_EventScript_ShowFameCheckerQuestion
+	end
+
+SevenIsland_House_Room1_EventScript_OldWomanMultiVisitors::
+	msgbox SevenIsland_House_Room1_Text_OldWomanMultiVisitors
+	goto SevenIsland_House_Room1_EventScript_ShowFameCheckerQuestion
+	end
+
+SevenIsland_House_Room1_EventScript_ShowFameCheckerQuestion::
+	textcolor 3
+	msgbox SevenIsland_House_Room1_Text_ShowFameChecker, MSGBOX_YESNO
+	compare VAR_RESULT, YES
+	goto_if_eq SevenIsland_House_Room1_EventScript_ShowingFameChecker
+	textcolor 1
+	msgbox SevenIsland_House_Room1_Text_NoShowFameChecker2
+	release
+	end
+
+SevenIsland_House_Room1_EventScript_OldWomanToldAll::
+	compare VAR_RESULT, 0
+	goto_if_eq SevenIsland_House_Room1_EventScript_OldWomanToldAllNoVisitors
+	compare VAR_RESULT, 1
+	goto_if_eq SevenIsland_House_Room1_EventScript_OldWomanToldAllOneVisitor
+	switch VAR_RESULT
+	case 2, SevenIsland_House_Room1_EventScript_Buffer2All
+	case 3, SevenIsland_House_Room1_EventScript_Buffer3All
+	case 4, SevenIsland_House_Room1_EventScript_Buffer4All
+	case 5, SevenIsland_House_Room1_EventScript_Buffer5All
+	case 6, SevenIsland_House_Room1_EventScript_Buffer6All
+	case 7, SevenIsland_House_Room1_EventScript_Buffer7All
+	goto SevenIsland_House_Room1_EventScript_OldWomanToldAllMultiVisitors
+
+SevenIsland_House_Room1_EventScript_OldWomanToldAllNoVisitors::
+	msgbox SevenIsland_House_Room1_Text_OldWomanToldAllNoVisitors
+	release
+	end
+
+SevenIsland_House_Room1_EventScript_OldWomanToldAllOneVisitor::
+	msgbox SevenIsland_House_Room1_Text_OldWomanToldAllOneVisitor
+	release
+	end
+
+SevenIsland_House_Room1_EventScript_OldWomanToldAllMultiVisitors::
+	msgbox SevenIsland_House_Room1_Text_OldWomanToldAllMultiVisitors
+	release
+	end
+
+SevenIsland_House_Room1_EventScript_Buffer2::
+	getstring 1, SevenIsland_House_Room1_Text_Two
+	goto SevenIsland_House_Room1_EventScript_OldWomanMultiVisitors
+
+SevenIsland_House_Room1_EventScript_Buffer3::
+	getstring 1, SevenIsland_House_Room1_Text_Three
+	goto SevenIsland_House_Room1_EventScript_OldWomanMultiVisitors
+
+SevenIsland_House_Room1_EventScript_Buffer4::
+	getstring 1, SevenIsland_House_Room1_Text_Four
+	goto SevenIsland_House_Room1_EventScript_OldWomanMultiVisitors
+
+SevenIsland_House_Room1_EventScript_Buffer5::
+	getstring 1, SevenIsland_House_Room1_Text_Five
+	goto SevenIsland_House_Room1_EventScript_OldWomanMultiVisitors
+
+SevenIsland_House_Room1_EventScript_Buffer6::
+	getstring 1, SevenIsland_House_Room1_Text_Six
+	goto SevenIsland_House_Room1_EventScript_OldWomanMultiVisitors
+
+SevenIsland_House_Room1_EventScript_Buffer7::
+	getstring 1, SevenIsland_House_Room1_Text_Seven
+	goto SevenIsland_House_Room1_EventScript_OldWomanMultiVisitors
+
+SevenIsland_House_Room1_EventScript_Buffer2All::
+	getstring 1, SevenIsland_House_Room1_Text_Two
+	goto SevenIsland_House_Room1_EventScript_OldWomanToldAllMultiVisitors
+
+SevenIsland_House_Room1_EventScript_Buffer3All::
+	getstring 1, SevenIsland_House_Room1_Text_Three
+	goto SevenIsland_House_Room1_EventScript_OldWomanToldAllMultiVisitors
+
+SevenIsland_House_Room1_EventScript_Buffer4All::
+	getstring 1, SevenIsland_House_Room1_Text_Four
+	goto SevenIsland_House_Room1_EventScript_OldWomanToldAllMultiVisitors
+
+SevenIsland_House_Room1_EventScript_Buffer5All::
+	getstring 1, SevenIsland_House_Room1_Text_Five
+	goto SevenIsland_House_Room1_EventScript_OldWomanToldAllMultiVisitors
+
+SevenIsland_House_Room1_EventScript_Buffer6All::
+	getstring 1, SevenIsland_House_Room1_Text_Six
+	goto SevenIsland_House_Room1_EventScript_OldWomanToldAllMultiVisitors
+
+SevenIsland_House_Room1_EventScript_Buffer7All::
+	getstring 1, SevenIsland_House_Room1_Text_Seven
+	goto SevenIsland_House_Room1_EventScript_OldWomanToldAllMultiVisitors
+
+SevenIsland_House_Room1_EventScript_Box:: @ 8170A75
+	msgbox SevenIsland_House_Room1_Text_SlightBreezeAroundBox, MSGBOX_SIGN
+	end
