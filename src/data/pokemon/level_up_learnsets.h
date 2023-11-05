@@ -9,6 +9,45 @@
 // -- (ex. Voltorb ELEC using ICE BALL)
 // -- -- Voltorb MAKES SENSE FOR "BALL" MOVES IMO
 
+// POKEMON TYPES (counted twice for dual type)
+// __GEN_1__
+// 22 normal
+// 12 fire
+// 32 water
+// 9 electric
+// 14 grass
+// 5 ice
+// 8 fighting
+// 33 poison
+// 14 ground
+// 19 flying
+// 14 psychic
+// 12 bug
+// 11 rock
+// 3 ghost
+// 3 dragon
+// 0 dark
+// 2 steel
+
+// __GEN_2__
+// 15 normal
+// 10 fire
+// 18 water
+// 8 electric
+// 10 grass
+// 5 ice
+// 3 fighting
+// 4 poison
+// 10 ground
+// 19 flying
+// 10 psychic
+// 10 bug
+// 7 rock
+// 1 ghost
+// 1 dragon
+// 6 dark
+// 4 steel
+
 static const u16 sBulbasaurLevelUpLearnset[] = {
     LEVEL_UP_MOVE(1, MOVE_TACKLE),
     LEVEL_UP_MOVE(4, MOVE_GROWL),
@@ -104,6 +143,9 @@ static const u16 sCharizardLevelUpLearnset[] = {
     LEVEL_UP_MOVE(49, MOVE_FLAMETHROWER),
     LEVEL_UP_MOVE(59, MOVE_HEAT_WAVE),
     LEVEL_UP_END
+
+    // weather ball
+    // meteor mash
 };
 
 static const u16 sSquirtleLevelUpLearnset[] = {
@@ -669,6 +711,8 @@ static const u16 sVileplumeLevelUpLearnset[] = {
     LEVEL_UP_MOVE(53, MOVE_SUNNY_DAY),
     LEVEL_UP_MOVE(65, MOVE_SOLAR_BEAM),
     LEVEL_UP_END
+
+    // weather ball
 };
 
 static const u16 sParasLevelUpLearnset[] = { // good
@@ -749,6 +793,7 @@ static const u16 sDiglettLevelUpLearnset[] = {
     LEVEL_UP_MOVE(34, MOVE_EARTHQUAKE),
     LEVEL_UP_MOVE(37, MOVE_FISSURE),
     LEVEL_UP_END
+    // rock blast
 };
 
 static const u16 sDugtrioLevelUpLearnset[] = {
@@ -916,6 +961,8 @@ static const u16 sPoliwagLevelUpLearnset[] = {
     LEVEL_UP_MOVE(35, MOVE_JUMP_KICK),
     LEVEL_UP_MOVE(38, MOVE_HYDRO_PUMP),
     LEVEL_UP_END
+
+    // muddy water
 };
 
 static const u16 sPoliwhirlLevelUpLearnset[] = {
@@ -1076,6 +1123,8 @@ static const u16 sVictreebelLevelUpLearnset[] = {
     LEVEL_UP_MOVE(47, MOVE_LEAF_BLADE),
     LEVEL_UP_MOVE(47, MOVE_PETAL_DANCE),
     LEVEL_UP_END
+
+    // weatherball
 };
 
 static const u16 sTentacoolLevelUpLearnset[] = {
@@ -1303,6 +1352,8 @@ static const u16 sDoduoLevelUpLearnset[] = {
     LEVEL_UP_MOVE(37, MOVE_DRILL_PECK),
     LEVEL_UP_MOVE(41, MOVE_ENDEAVOR),
     LEVEL_UP_END
+
+    // jump kick
 };
 
 static const u16 sDodrioLevelUpLearnset[] = {
@@ -1418,6 +1469,10 @@ static const u16 sCloysterLevelUpLearnset[] = {
     LEVEL_UP_MOVE(28, MOVE_SPIKES),
     LEVEL_UP_MOVE(40, MOVE_SPIKE_CANNON),
     LEVEL_UP_END
+    // rock blast
+    // signal beam
+    // twin needle
+    // pin missile
 };
 
 static const u16 sGastlyLevelUpLearnset[] = {
@@ -1551,6 +1606,9 @@ static const u16 sKrabbyLevelUpLearnset[] = {
     LEVEL_UP_MOVE(41, MOVE_CRABHAMMER),
     LEVEL_UP_MOVE(45, MOVE_FLAIL),
     LEVEL_UP_END
+
+    // crush claw
+    // meteor mash
 };
 
 static const u16 sKinglerLevelUpLearnset[] = {
@@ -2120,6 +2178,8 @@ static const u16 sVaporeonLevelUpLearnset[] = {
     LEVEL_UP_MOVE(47, MOVE_ACID_ARMOR),
     LEVEL_UP_MOVE(52, MOVE_HYDRO_PUMP),
     LEVEL_UP_END
+
+    // muddy water
 };
 
 static const u16 sJolteonLevelUpLearnset[] = {
@@ -2536,6 +2596,8 @@ static const u16 sSentretLevelUpLearnset[] = {
     LEVEL_UP_MOVE(40, MOVE_REST),
     LEVEL_UP_MOVE(49, MOVE_AMNESIA),
     LEVEL_UP_END
+
+    // hyper voice
 };
 
 static const u16 sFurretLevelUpLearnset[] = {
@@ -2808,6 +2870,8 @@ static const u16 sAmpharosLevelUpLearnset[] = {
     LEVEL_UP_MOVE(42, MOVE_LIGHT_SCREEN),
     LEVEL_UP_MOVE(57, MOVE_THUNDER),
     LEVEL_UP_END
+
+    // fire punch
 };
 
 static const u16 sBellossomLevelUpLearnset[] = {
@@ -2986,6 +3050,8 @@ static const u16 sWooperLevelUpLearnset[] = {
     LEVEL_UP_MOVE(51, MOVE_MIST),
     LEVEL_UP_MOVE(51, MOVE_HAZE),
     LEVEL_UP_END
+
+    // muddy water
 };
 
 static const u16 sQuagsireLevelUpLearnset[] = {
@@ -3111,6 +3177,9 @@ static const u16 sPinecoLevelUpLearnset[] = {
     LEVEL_UP_MOVE(43, MOVE_SPIKES),
     LEVEL_UP_MOVE(50, MOVE_DOUBLE_EDGE),
     LEVEL_UP_END
+    // rock blast
+    // spike cannon
+    // pin missile
 };
 
 static const u16 sForretressLevelUpLearnset[] = {
@@ -3141,6 +3210,9 @@ static const u16 sDunsparceLevelUpLearnset[] = {
     LEVEL_UP_MOVE(44, MOVE_FLAIL),
     LEVEL_UP_MOVE(51, MOVE_ENDEAVOR),
     LEVEL_UP_END
+
+    // poison tail
+    // ancient power
 };
 
 static const u16 sGligarLevelUpLearnset[] = {
@@ -3410,6 +3482,8 @@ static const u16 sMantineLevelUpLearnset[] = {
     LEVEL_UP_MOVE(43, MOVE_WATER_PULSE),
     LEVEL_UP_MOVE(50, MOVE_CONFUSE_RAY),
     LEVEL_UP_END
+    
+    // rock blast
 };
 
 static const u16 sSkarmoryLevelUpLearnset[] = {
@@ -3557,6 +3631,8 @@ static const u16 sHitmontopLevelUpLearnset[] = {
     LEVEL_UP_MOVE(43, MOVE_DETECT),
     LEVEL_UP_MOVE(49, MOVE_ENDEAVOR),
     LEVEL_UP_END
+    
+    // blaze kick
 };
 
 static const u16 sSmoochumLevelUpLearnset[] = {

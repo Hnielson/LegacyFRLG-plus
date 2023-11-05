@@ -965,7 +965,7 @@ AI_CV_DefenseUp_PhysicalTypes:: @ 81DA8DF
 	.byte TYPE_FLYING
 	.byte TYPE_ROCK
 	.byte TYPE_BUG
-	.byte TYPE_GHOST
+	.byte TYPE_DARK
 	.byte TYPE_STEEL
 	.byte -1
 
@@ -1045,7 +1045,7 @@ AI_CV_SpDefUp_PhysicalTypes:: @ 81DA996
 	.byte TYPE_FLYING
 	.byte TYPE_ROCK
 	.byte TYPE_BUG
-	.byte TYPE_GHOST
+	.byte TYPE_DARK
 	.byte TYPE_STEEL
 	.byte -1
 
@@ -1228,7 +1228,7 @@ AI_CV_SpAtkDown_SpecialTypeList:: @ 81DAB6E
 	.byte TYPE_PSYCHIC
 	.byte TYPE_ICE
 	.byte TYPE_DRAGON
-	.byte TYPE_DARK
+	.byte TYPE_GHOST 
 	.byte -1
 
 AI_CV_SpDefDown:: @ 81DAB77
@@ -1469,7 +1469,7 @@ AI_CV_LightScreen_SpecialTypeList:: @ 81DAE41
 	.byte TYPE_PSYCHIC
 	.byte TYPE_ICE
 	.byte TYPE_DRAGON
-	.byte TYPE_DARK
+	.byte TYPE_GHOST
 	.byte -1
 
 AI_CV_Rest:: @ 81DAE4A
@@ -1603,7 +1603,7 @@ AI_CV_Reflect_PhysicalTypeList:: @ 81DAF62
 	.byte TYPE_GROUND
 	.byte TYPE_ROCK
 	.byte TYPE_BUG
-	.byte TYPE_GHOST
+	.byte TYPE_DARK
 	.byte TYPE_STEEL
 	.byte -1
 
@@ -1783,7 +1783,7 @@ AI_CV_Counter_PhysicalTypeList:: @ 81DB131
 	.byte TYPE_GROUND
 	.byte TYPE_ROCK
 	.byte TYPE_BUG
-	.byte TYPE_GHOST
+	.byte TYPE_DARK
 	.byte TYPE_STEEL
 	.byte -1
 
@@ -2300,7 +2300,7 @@ AI_CV_MirrorCoat_SpecialTypeList:: @ 81DB63C
 	.byte TYPE_PSYCHIC
 	.byte TYPE_ICE
 	.byte TYPE_DRAGON
-	.byte TYPE_DARK
+	.byte TYPE_GHOST
 	.byte -1
 
 AI_CV_ChargeUpMove:: @ 81DB645
