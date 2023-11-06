@@ -9,25 +9,26 @@
 // -- (ex. Voltorb ELEC using ICE BALL)
 // -- -- Voltorb MAKES SENSE FOR "BALL" MOVES IMO
 
+// TOTAL 321 TYPES USED AMONG ALL POKEMON (pokemon counted twice for dual-types)
 // POKEMON TYPES (counted twice for dual type)
 // __GEN_1__
-// 22 normal
-// 12 fire
-// 32 water
-// 9 electric
-// 14 grass
-// 5 ice
-// 8 fighting
-// 33 poison
-// 14 ground
-// 19 flying
-// 14 psychic
-// 12 bug
-// 11 rock
-// 3 ghost
-// 3 dragon
-// 0 dark
-// 2 steel
+// 22 normal    11.5%
+// 12 fire      6.9%
+// 32 water     15.6%
+// 9 electric   5.3%
+// 14 grass     7.5%
+// 5 ice        3.1%
+// 8 fighting   3.4%
+// 33 poison    11.5%
+// 14 ground    7.5%
+// 19 flying    11.8%
+// 14 psychic   7.5%
+// 12 bug       6.9%
+// 11 rock      5.6%
+// 3 ghost      1.2%
+// 3 dragon     1.2%
+// 0 dark       1.9%
+// 2 steel      1.9%
 
 // __GEN_2__
 // 15 normal

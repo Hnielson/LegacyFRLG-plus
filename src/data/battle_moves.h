@@ -21,24 +21,25 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 // __POKEMON_CANDIDATES_IDEAS__
 // ex. voltorb, alakazam
 
+// TOTAL 216 ATTACK MOVE TYPES
 // __ATTACK_TYPE__
-// 60 normal
-// 12 fire
-// 15 water
-// 8 electric
-// 12 grass
-// 9 ice
-// 22 fighting
-// 7 poison
-// 10 ground
-// 11 flying
-// 11 psychic
-// 8 bug
-// 6 rock
-// 6 ghost
-// 5 dragon
-// 7 dark
-// 6 steel
+// 60 normal    27.8%
+// 12 fire      5.6%
+// 15 water     6.9%
+// 8 electric   3.7%
+// 12 grass     5.6%
+// 9 ice        4.2%
+// 22 fighting  10.2%
+// 7 poison     3.2%
+// 10 ground    4.6%
+// 11 flying    5.1%
+// 11 psychic   5.1%
+// 8 bug        3.7%
+// 6 rock       2.8%
+// 6 ghost      2.8%
+// 5 dragon     2.3%
+// 8 dark       3.7%
+// 6 steel      2.8%
 
 // __STAT_CHANGES__
 // status atk_up          3 -- attacks 2 both steel
@@ -1627,7 +1628,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
         .flags = 0,
     },
 
-    [MOVE_SELF_DESTRUCT] = // useless
+    [MOVE_SELF_DESTRUCT] =
     {
         .effect = EFFECT_EXPLOSION,
         .power = 200,
@@ -2056,7 +2057,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
         .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGSROCK_AFFECTED,
     },
 
-    [MOVE_EXPLOSION] = // useless
+    [MOVE_EXPLOSION] =
     {
         .effect = EFFECT_EXPLOSION,
         .power = 250,
@@ -4435,17 +4436,17 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
         .flags = FLAG_PROTECT_AFFECTED | FLAG_MAGICCOAT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
     },
 
-    [MOVE_HOWL] = // candidate snarl
+    [MOVE_HOWL] = // change snarl
     {
-        .effect = EFFECT_ATTACK_UP, // candidate lower sp.atk_hit
-        .power = 0, // candidate 55
-        .type = TYPE_NORMAL,
-        .accuracy = 0, // candidate 95
-        .pp = 40, // candidate 15
-        .secondaryEffectChance = 0, // candidate 100
-        .target = MOVE_TARGET_USER,
+        .effect = EFFECT_SPECIAL_ATTACK_DOWN_HIT,
+        .power = 55,
+        .type = TYPE_DARK,
+        .accuracy = 95,
+        .pp = 15,
+        .secondaryEffectChance = 100, // candidate 30
+        .target = MOVE_TARGET_BOTH,
         .priority = 0,
-        .flags = FLAG_SNATCH_AFFECTED, // candidate
+        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED, // candidate
     },
 
     [MOVE_DRAGON_CLAW] =
