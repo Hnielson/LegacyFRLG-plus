@@ -67,6 +67,12 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 // status accuracy_down   4 -- attacks 3 (2 water), ground
 // status atk_def_down    1
 
+// I WILL CHANGE MOVES IF SOME POKEMON IS LACKING TOOLS
+// MIGHT CHANGE SNARL BACK TO HOWL
+
+// add hurricane (effect_thunder)
+// .. stone edge (high_crit)
+
 {
     [MOVE_NONE] =
     {
@@ -149,7 +155,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
     [MOVE_PAY_DAY] =
     {
         .effect = EFFECT_PAY_DAY,
-        .power = 40,
+        .power = 40, // candidate
         .type = TYPE_NORMAL,
         .accuracy = 100,
         .pp = 20,
@@ -2996,7 +3002,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
     [MOVE_DRAGON_BREATH] = // candidate
     {
         .effect = EFFECT_PARALYZE_HIT,
-        .power = 80, // change
+        .power = 60, // candidate
         .type = TYPE_DRAGON,
         .accuracy = 100,
         .pp = 20,
@@ -3178,7 +3184,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
     [MOVE_TWISTER] = // candidate
     {
         .effect = EFFECT_TWISTER,
-        .power = 70, // change
+        .power = 40, // candidate
         .type = TYPE_DRAGON,
         .accuracy = 100,
         .pp = 20,
@@ -4452,7 +4458,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
     [MOVE_DRAGON_CLAW] =
     {
         .effect = EFFECT_HIT,
-        .power = 90, // change
+        .power = 80, // change
         .type = TYPE_DRAGON,
         .accuracy = 100,
         .pp = 15,
