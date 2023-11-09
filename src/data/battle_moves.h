@@ -72,6 +72,9 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 
 // add hurricane (effect_thunder)
 // .. stone edge (high_crit)
+// .. drill run (high_crit)
+// .. ominous wind (silver_wind)
+// .. echoed voice (fury_cutter)
 
 {
     [MOVE_NONE] =
