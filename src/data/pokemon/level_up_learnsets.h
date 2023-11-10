@@ -797,6 +797,7 @@ static const u16 sClefairyLevelUpLearnset[] = { // incomplete*
     // tri attack
     // covet
     // extrasensory
+    // bounce
 };
 
 static const u16 sClefableLevelUpLearnset[] = {
@@ -874,6 +875,7 @@ static const u16 sJigglypuffLevelUpLearnset[] = { // incomplete
     // uproar
     // tri attack
     // calm mind
+    // bounce
 };
 
 static const u16 sWigglytuffLevelUpLearnset[] = {
@@ -1648,302 +1650,456 @@ static const u16 sTentacruelLevelUpLearnset[] = {
 static const u16 sGeodudeLevelUpLearnset[] = { // incomplete
     LEVEL_UP_MOVE(1, MOVE_TACKLE),
     LEVEL_UP_MOVE(1, MOVE_DEFENSE_CURL),
-    LEVEL_UP_MOVE(4, MOVE_MUD_SPORT),
-    LEVEL_UP_MOVE(8, MOVE_AGILITY),
-    LEVEL_UP_MOVE(11, MOVE_ROCK_THROW),
-    LEVEL_UP_MOVE(15, MOVE_MAGNITUDE),
-    LEVEL_UP_MOVE(18, MOVE_SELF_DESTRUCT),
-    LEVEL_UP_MOVE(22, MOVE_ROLLOUT),
-    LEVEL_UP_MOVE(25, MOVE_ROCK_BLAST),
-    LEVEL_UP_MOVE(29, MOVE_EARTHQUAKE),
-    LEVEL_UP_MOVE(32, MOVE_EXPLOSION),
-    LEVEL_UP_MOVE(36, MOVE_DOUBLE_EDGE),
-    LEVEL_UP_MOVE(39, MOVE_ROCK_SLIDE),
+    LEVEL_UP_MOVE(6, MOVE_AGILITY),
+    // 6 rock polish? agility
+    LEVEL_UP_MOVE(10, MOVE_ROLLOUT),
+    LEVEL_UP_MOVE(12, MOVE_MAGNITUDE),
+    // 12 bulldoze? magnitude
+    LEVEL_UP_MOVE(16, MOVE_ROCK_THROW),
+    // 18 smack down?
+    LEVEL_UP_MOVE(24, MOVE_SELF_DESTRUCT), // 24
+    // 28 stealth rock? spikes
+    LEVEL_UP_MOVE(30, MOVE_ROCK_BLAST), // 30
+    LEVEL_UP_MOVE(34, MOVE_EARTHQUAKE), // 34
+    LEVEL_UP_MOVE(36, MOVE_EXPLOSION), // 36
+    LEVEL_UP_MOVE(40, MOVE_DOUBLE_EDGE), // 40
+    // 42 stone edge? 
     LEVEL_UP_END
+
+     // mud slap
+     // iron defense
+     // hammer arm
+     // curse
+     // ancient power
+     // superpower
+     // heavy slam?
+     // steamroller?
+     // incinerate?
 };
 
 static const u16 sGravelerLevelUpLearnset[] = {
     LEVEL_UP_MOVE(1, MOVE_TACKLE),
     LEVEL_UP_MOVE(1, MOVE_DEFENSE_CURL),
-    LEVEL_UP_MOVE(1, MOVE_ROCK_THROW),
-    LEVEL_UP_MOVE(4, MOVE_MUD_SPORT),
-    LEVEL_UP_MOVE(8, MOVE_AGILITY),
-    LEVEL_UP_MOVE(11, MOVE_ROCK_THROW),
-    LEVEL_UP_MOVE(15, MOVE_MAGNITUDE),
-    LEVEL_UP_MOVE(18, MOVE_SELF_DESTRUCT),
-    LEVEL_UP_MOVE(22, MOVE_ROLLOUT),
-    LEVEL_UP_MOVE(27, MOVE_ROCK_BLAST),
-    LEVEL_UP_MOVE(33, MOVE_EARTHQUAKE),
-    LEVEL_UP_MOVE(38, MOVE_EXPLOSION),
-    LEVEL_UP_MOVE(44, MOVE_DOUBLE_EDGE),
-    LEVEL_UP_MOVE(49, MOVE_ROCK_SLIDE),
+    LEVEL_UP_MOVE(6, MOVE_AGILITY),
+    // 6 rock polish? agility
+    LEVEL_UP_MOVE(10, MOVE_ROLLOUT),
+    LEVEL_UP_MOVE(12, MOVE_MAGNITUDE),
+    // 12 bulldoze? magnitude
+    LEVEL_UP_MOVE(16, MOVE_ROCK_THROW),
+    // 18 smack down?
+    LEVEL_UP_MOVE(24, MOVE_SELF_DESTRUCT), // 24
+    // 30 stealth rock? spikes
+    LEVEL_UP_MOVE(34, MOVE_ROCK_BLAST), // 34
+    LEVEL_UP_MOVE(40, MOVE_EARTHQUAKE), // 40
+    LEVEL_UP_MOVE(44, MOVE_EXPLOSION), // 44
+    LEVEL_UP_MOVE(50, MOVE_DOUBLE_EDGE), // 50
+    // 54 stone edge? 
     LEVEL_UP_END
 };
 
-static const u16 sGolemLevelUpLearnset[] = {
+static const u16 sGolemLevelUpLearnset[] = { // reformat backwards
     LEVEL_UP_MOVE(1, MOVE_TACKLE),
     LEVEL_UP_MOVE(1, MOVE_DEFENSE_CURL),
-    LEVEL_UP_MOVE(1, MOVE_MUD_SPORT),
-    LEVEL_UP_MOVE(1, MOVE_ROCK_THROW),
-    LEVEL_UP_MOVE(4, MOVE_MUD_SPORT),
-    LEVEL_UP_MOVE(8, MOVE_AGILITY),
-    LEVEL_UP_MOVE(11, MOVE_ROCK_THROW),
-    LEVEL_UP_MOVE(15, MOVE_MAGNITUDE),
-    LEVEL_UP_MOVE(18, MOVE_SELF_DESTRUCT),
-    LEVEL_UP_MOVE(22, MOVE_ROLLOUT),
-    LEVEL_UP_MOVE(27, MOVE_ROCK_BLAST),
-    LEVEL_UP_MOVE(33, MOVE_EARTHQUAKE),
-    LEVEL_UP_MOVE(38, MOVE_EXPLOSION),
-    LEVEL_UP_MOVE(44, MOVE_DOUBLE_EDGE),
-    LEVEL_UP_MOVE(49, MOVE_ROCK_SLIDE),
+    LEVEL_UP_MOVE(6, MOVE_AGILITY),
+    // 6 rock polish? agility
+    LEVEL_UP_MOVE(10, MOVE_ROLLOUT),
+    LEVEL_UP_MOVE(12, MOVE_MAGNITUDE),
+    // 12 bulldoze? magnitude
+    LEVEL_UP_MOVE(16, MOVE_ROCK_THROW),
+    // 18 smack down?
+    LEVEL_UP_MOVE(24, MOVE_SELF_DESTRUCT), // 24
+    // 30 stealth rock? spikes
+    LEVEL_UP_MOVE(34, MOVE_ROCK_BLAST), // 34
+    LEVEL_UP_MOVE(40, MOVE_EARTHQUAKE), // 40
+    LEVEL_UP_MOVE(44, MOVE_EXPLOSION), // 44
+    LEVEL_UP_MOVE(50, MOVE_DOUBLE_EDGE), // 50
+    // 54 stone edge? 
     LEVEL_UP_END
+
+    // fury cutter
 };
 
 static const u16 sPonytaLevelUpLearnset[] = { // incomplete
     LEVEL_UP_MOVE(1, MOVE_QUICK_ATTACK),
     LEVEL_UP_MOVE(1, MOVE_GROWL),
-    LEVEL_UP_MOVE(6, MOVE_TAIL_WHIP),
+    LEVEL_UP_MOVE(5, MOVE_TAIL_WHIP),
     LEVEL_UP_MOVE(10, MOVE_EMBER),
-    LEVEL_UP_MOVE(15, MOVE_FLAME_WHEEL),
-    LEVEL_UP_MOVE(19, MOVE_STOMP),
-    LEVEL_UP_MOVE(24, MOVE_FIRE_SPIN),
-    LEVEL_UP_MOVE(28, MOVE_TAKE_DOWN),
-    LEVEL_UP_MOVE(33, MOVE_AGILITY),
-    LEVEL_UP_MOVE(37, MOVE_FIRE_BLAST),
-    LEVEL_UP_MOVE(42, MOVE_BOUNCE),
-    LEVEL_UP_MOVE(46, MOVE_MEGAHORN),
+    // 10 flame charge?
+    LEVEL_UP_MOVE(20, MOVE_AGILITY),
+    LEVEL_UP_MOVE(25, MOVE_FLAME_WHEEL),
+    LEVEL_UP_MOVE(30, MOVE_STOMP),
+    LEVEL_UP_MOVE(35, MOVE_FIRE_SPIN),
+    LEVEL_UP_MOVE(41, MOVE_TAKE_DOWN),
+    // 45 inferno?
+    LEVEL_UP_MOVE(50, MOVE_FIRE_BLAST),
+    // LEVEL_UP_MOVE(45, MOVE_BOUNCE), keep
+    // 55 flare blitz? megahorn
     LEVEL_UP_END
+
+    // bounce
+    // hypnosis
+    // double hit?
+    // charm
+    // will-o-wisp
+    // low kick
+    // thrash
+    // wild charge?
+    // morning sun
+    // echoed voice?
 };
 
 static const u16 sRapidashLevelUpLearnset[] = {
+    LEVEL_UP_MOVE(1, MOVE_MEGAHORN),
     LEVEL_UP_MOVE(1, MOVE_QUICK_ATTACK),
     LEVEL_UP_MOVE(1, MOVE_GROWL),
-    LEVEL_UP_MOVE(1, MOVE_EMBER),
-    LEVEL_UP_MOVE(6, MOVE_TAIL_WHIP),
+    LEVEL_UP_MOVE(5, MOVE_TAIL_WHIP),
     LEVEL_UP_MOVE(10, MOVE_EMBER),
-    LEVEL_UP_MOVE(15, MOVE_FLAME_WHEEL),
-    LEVEL_UP_MOVE(19, MOVE_STOMP),
-    LEVEL_UP_MOVE(24, MOVE_FIRE_SPIN),
-    LEVEL_UP_MOVE(28, MOVE_TAKE_DOWN),
-    LEVEL_UP_MOVE(33, MOVE_AGILITY),
-    LEVEL_UP_MOVE(37, MOVE_FIRE_BLAST),
-    LEVEL_UP_MOVE(40, MOVE_FURY_ATTACK),
-    LEVEL_UP_MOVE(47, MOVE_BOUNCE),
-    LEVEL_UP_MOVE(56, MOVE_MEGAHORN),
+    // 10 flame charge?
+    LEVEL_UP_MOVE(20, MOVE_AGILITY),
+    LEVEL_UP_MOVE(25, MOVE_FLAME_WHEEL),
+    LEVEL_UP_MOVE(30, MOVE_STOMP),
+    LEVEL_UP_MOVE(35, MOVE_FIRE_SPIN),
+    LEVEL_UP_MOVE(41, MOVE_TAKE_DOWN),
+    // 45 inferno?
+    LEVEL_UP_MOVE(50, MOVE_FIRE_BLAST),
+    // LEVEL_UP_MOVE(45, MOVE_BOUNCE), keep
+    // 55 flare blitz? megahorn
     LEVEL_UP_END
+    
+    // megahorn
+    // poison jab?
+    // drill run?
 };
 
 static const u16 sSlowpokeLevelUpLearnset[] = { // incomplete
-    LEVEL_UP_MOVE(1, MOVE_CURSE),
-    LEVEL_UP_MOVE(1, MOVE_YAWN),
     LEVEL_UP_MOVE(1, MOVE_TACKLE),
-    LEVEL_UP_MOVE(6, MOVE_GROWL),
-    LEVEL_UP_MOVE(11, MOVE_WATER_GUN),
-    LEVEL_UP_MOVE(15, MOVE_CONFUSION),
-    LEVEL_UP_MOVE(20, MOVE_DISABLE),
-    LEVEL_UP_MOVE(25, MOVE_HEADBUTT),
-    LEVEL_UP_MOVE(29, MOVE_WATER_PULSE),
-    LEVEL_UP_MOVE(34, MOVE_CLAMP),
-    LEVEL_UP_MOVE(39, MOVE_RECOVER),
-    LEVEL_UP_MOVE(43, MOVE_AMNESIA),
-    LEVEL_UP_MOVE(48, MOVE_PSYCHIC),
-    LEVEL_UP_MOVE(53, MOVE_RAIN_DANCE),
-    LEVEL_UP_MOVE(57, MOVE_PSYCH_UP),
+    LEVEL_UP_MOVE(1, MOVE_CURSE),
+    LEVEL_UP_MOVE(3, MOVE_GROWL),
+    LEVEL_UP_MOVE(6, MOVE_WATER_GUN),
+    LEVEL_UP_MOVE(9, MOVE_YAWN),
+    LEVEL_UP_MOVE(12, MOVE_CONFUSION),
+    LEVEL_UP_MOVE(15, MOVE_DISABLE),
+    LEVEL_UP_MOVE(18, MOVE_WATER_PULSE),
+    LEVEL_UP_MOVE(21, MOVE_HEADBUTT),
+    // 24 zen headbutt?
+    LEVEL_UP_MOVE(27, MOVE_AMNESIA),
+    LEVEL_UP_MOVE(30, MOVE_SURF),
+    LEVEL_UP_MOVE(33, MOVE_RECOVER),
+    // 33 slack off? recover
+    LEVEL_UP_MOVE(36, MOVE_PSYCHIC),
+    LEVEL_UP_MOVE(39, MOVE_PSYCH_UP),
+    LEVEL_UP_MOVE(42, MOVE_RAIN_DANCE),
+    // 45 heal pulse?
     LEVEL_UP_END
+
+    // signal beam
+    // psych up
+    // mud shot
+    // weather ball
+    // payday
 };
 
 static const u16 sSlowbroLevelUpLearnset[] = {
-    LEVEL_UP_MOVE(1, MOVE_CURSE),
-    LEVEL_UP_MOVE(1, MOVE_YAWN),
     LEVEL_UP_MOVE(1, MOVE_TACKLE),
-    LEVEL_UP_MOVE(6, MOVE_GROWL),
-    LEVEL_UP_MOVE(11, MOVE_WATER_GUN),
-    LEVEL_UP_MOVE(15, MOVE_CONFUSION),
-    LEVEL_UP_MOVE(20, MOVE_DISABLE),
-    LEVEL_UP_MOVE(25, MOVE_HEADBUTT),
-    LEVEL_UP_MOVE(29, MOVE_WATER_PULSE),
-    LEVEL_UP_MOVE(34, MOVE_CLAMP),
-    LEVEL_UP_MOVE(37, MOVE_WITHDRAW),
-    LEVEL_UP_MOVE(41, MOVE_RECOVER),
-    LEVEL_UP_MOVE(47, MOVE_AMNESIA),
-    LEVEL_UP_MOVE(54, MOVE_PSYCHIC),
-    LEVEL_UP_MOVE(61, MOVE_RAIN_DANCE),
-    LEVEL_UP_MOVE(67, MOVE_PSYCH_UP),
+    LEVEL_UP_MOVE(1, MOVE_CURSE),
+    LEVEL_UP_MOVE(3, MOVE_GROWL),
+    LEVEL_UP_MOVE(6, MOVE_WATER_GUN),
+    LEVEL_UP_MOVE(9, MOVE_YAWN),
+    LEVEL_UP_MOVE(12, MOVE_CONFUSION),
+    LEVEL_UP_MOVE(15, MOVE_DISABLE),
+    LEVEL_UP_MOVE(18, MOVE_WATER_PULSE),
+    LEVEL_UP_MOVE(21, MOVE_HEADBUTT),
+    // 24 zen headbutt?
+    LEVEL_UP_MOVE(27, MOVE_AMNESIA),
+    LEVEL_UP_MOVE(30, MOVE_SURF),
+    LEVEL_UP_MOVE(33, MOVE_RECOVER),
+    // 33 slack off? recover
+    LEVEL_UP_MOVE(36, MOVE_PSYCHIC),
+    LEVEL_UP_MOVE(37, MOVE_FUTURE_SIGHT),
+    LEVEL_UP_MOVE(41, MOVE_PSYCH_UP),
+    LEVEL_UP_MOVE(46, MOVE_RAIN_DANCE),
+    // 51 heal pulse?
     LEVEL_UP_END
+
+    // drain punch?
+    // iron defense
+    // nasty plot (tail glow)
+    // zap cannon
 };
 
 static const u16 sMagnemiteLevelUpLearnset[] = { // incomplete
     LEVEL_UP_MOVE(1, MOVE_TACKLE),
     LEVEL_UP_MOVE(1, MOVE_METAL_SOUND),
-    LEVEL_UP_MOVE(6, MOVE_THUNDER_SHOCK),
-    LEVEL_UP_MOVE(11, MOVE_SUPERSONIC),
-    LEVEL_UP_MOVE(14, MOVE_SONIC_BOOM),
-    LEVEL_UP_MOVE(17, MOVE_THUNDER_WAVE),
-    LEVEL_UP_MOVE(22, MOVE_SPARK),
-    LEVEL_UP_MOVE(27, MOVE_LOCK_ON),
-    LEVEL_UP_MOVE(30, MOVE_SPIKE_CANNON),
-    LEVEL_UP_MOVE(33, MOVE_SCREECH),
-    LEVEL_UP_MOVE(38, MOVE_THUNDERBOLT),
-    LEVEL_UP_MOVE(43, MOVE_ZAP_CANNON),
+    LEVEL_UP_MOVE(4, MOVE_SUPERSONIC),
+    LEVEL_UP_MOVE(8, MOVE_THUNDER_WAVE),
+    // LEVEL_UP_MOVE(12, MOVE_THUNDER_SHOCK),
+    // 12 electro ball?
+    // LEVEL_UP_MOVE(16, MOVE_SPIKE_CANNON),
+    // 16 gyro ball?
+    LEVEL_UP_MOVE(20, MOVE_SPARK),
+    LEVEL_UP_MOVE(24, MOVE_SCREECH),
+    // LEVEL_UP_MOVE(28, MOVE_SONIC_BOOM),
+    // 28 magnet rise?
+    // 32 flash cannon?
+    LEVEL_UP_MOVE(36, MOVE_THUNDERBOLT),
+    // 36 discharge? thunderbolt
+    LEVEL_UP_MOVE(40, MOVE_METAL_SOUND),
+    LEVEL_UP_MOVE(44, MOVE_LIGHT_SCREEN),
+    LEVEL_UP_MOVE(48, MOVE_LOCK_ON),
+    LEVEL_UP_MOVE(52, MOVE_ZAP_CANNON),
     LEVEL_UP_END
+
+    // charge beam?
+    // wild charge?
+    // electroweb?
+    // signal beam
+    // rollout
+    // headbutt
+    // iron defense
+    // magnet bomb?
 };
 
 static const u16 sMagnetonLevelUpLearnset[] = {
-    LEVEL_UP_MOVE(1, MOVE_TRI_ATTACK),
-    LEVEL_UP_MOVE(1, MOVE_METAL_SOUND),
     LEVEL_UP_MOVE(1, MOVE_TACKLE),
-    LEVEL_UP_MOVE(1, MOVE_SUPERSONIC),
-    LEVEL_UP_MOVE(6, MOVE_THUNDER_SHOCK),
-    LEVEL_UP_MOVE(11, MOVE_SUPERSONIC),
-    LEVEL_UP_MOVE(14, MOVE_SONIC_BOOM),
-    LEVEL_UP_MOVE(17, MOVE_THUNDER_WAVE),
-    LEVEL_UP_MOVE(22, MOVE_SPARK),
-    LEVEL_UP_MOVE(27, MOVE_LOCK_ON),
-    LEVEL_UP_MOVE(30, MOVE_SPIKE_CANNON),
-    LEVEL_UP_MOVE(34, MOVE_SCREECH),
+    LEVEL_UP_MOVE(1, MOVE_METAL_SOUND),
+    LEVEL_UP_MOVE(4, MOVE_SUPERSONIC),
+    LEVEL_UP_MOVE(8, MOVE_THUNDER_WAVE),
+    // LEVEL_UP_MOVE(12, MOVE_THUNDER_SHOCK),
+    // 12 electro ball?
+    // LEVEL_UP_MOVE(16, MOVE_SPIKE_CANNON),
+    // 16 gyro ball?
+    LEVEL_UP_MOVE(20, MOVE_SPARK),
+    LEVEL_UP_MOVE(24, MOVE_SCREECH),
+    // LEVEL_UP_MOVE(28, MOVE_SONIC_BOOM),
+    // 28 magnet rise?
+    LEVEL_UP_MOVE(30, MOVE_TRI_ATTACK),
+    // 34 flash cannon?
     LEVEL_UP_MOVE(40, MOVE_THUNDERBOLT),
-    LEVEL_UP_MOVE(46, MOVE_ZAP_CANNON),
+    // 40 discharge? thunderbolt
+    LEVEL_UP_MOVE(46, MOVE_METAL_SOUND),
+    LEVEL_UP_MOVE(52, MOVE_LIGHT_SCREEN),
+    LEVEL_UP_MOVE(58, MOVE_LOCK_ON),
+    LEVEL_UP_MOVE(64, MOVE_ZAP_CANNON),
     LEVEL_UP_END
 };
 
 static const u16 sFarfetchdLevelUpLearnset[] = { // incomplete
     LEVEL_UP_MOVE(1, MOVE_PECK),
     LEVEL_UP_MOVE(1, MOVE_SAND_ATTACK),
-    LEVEL_UP_MOVE(1, MOVE_LEER),
-    LEVEL_UP_MOVE(1, MOVE_FURY_CUTTER),
-    LEVEL_UP_MOVE(7, MOVE_FURY_ATTACK),
-    LEVEL_UP_MOVE(9, MOVE_KNOCK_OFF),
-    LEVEL_UP_MOVE(13, MOVE_AERIAL_ACE),
-    LEVEL_UP_MOVE(19, MOVE_SLASH),
-    LEVEL_UP_MOVE(21, MOVE_AIR_CUTTER),
-    LEVEL_UP_MOVE(25, MOVE_SWORDS_DANCE),
-    LEVEL_UP_MOVE(31, MOVE_AGILITY),
-    LEVEL_UP_MOVE(33, MOVE_FALSE_SWIPE),
+    LEVEL_UP_MOVE(5, MOVE_LEER),
+    LEVEL_UP_MOVE(10, MOVE_FURY_CUTTER),
+    LEVEL_UP_MOVE(15, MOVE_CUT),
+    LEVEL_UP_MOVE(20, MOVE_AERIAL_ACE),
+    LEVEL_UP_MOVE(25, MOVE_AIR_CUTTER),
+    LEVEL_UP_MOVE(30, MOVE_KNOCK_OFF),
+    LEVEL_UP_MOVE(35, MOVE_FALSE_SWIPE),
+    LEVEL_UP_MOVE(40, MOVE_SLASH),
+    LEVEL_UP_MOVE(45, MOVE_SWORDS_DANCE),
+    // 50 air slash?
+    LEVEL_UP_MOVE(55, MOVE_LEAF_BLADE),
+    LEVEL_UP_MOVE(60, MOVE_AGILITY),
+    // 65 brave bird?
     LEVEL_UP_END
+
+    // u-turn?
+    // solar blade?
+    // heatwave
+    // poison jab? poison tail
+    // close combat? superpower
+    // work up?
+    // roost? recover
+    // night slash?
+    // dual wingbeat?
+    // ominous wind?
+    // razor leaf?
+    // twister
 };
 
 static const u16 sDoduoLevelUpLearnset[] = { // incomplete
     LEVEL_UP_MOVE(1, MOVE_PECK),
     LEVEL_UP_MOVE(1, MOVE_GROWL),
     LEVEL_UP_MOVE(5, MOVE_QUICK_ATTACK),
-    LEVEL_UP_MOVE(10, MOVE_RAGE),
-    LEVEL_UP_MOVE(14, MOVE_FURY_ATTACK),
-    LEVEL_UP_MOVE(19, MOVE_PURSUIT),
-    LEVEL_UP_MOVE(23, MOVE_UPROAR),
-    LEVEL_UP_MOVE(28, MOVE_AGILITY),
-    LEVEL_UP_MOVE(37, MOVE_DRILL_PECK),
-    LEVEL_UP_MOVE(41, MOVE_ENDEAVOR),
+    LEVEL_UP_MOVE(8, MOVE_RAGE),
+    LEVEL_UP_MOVE(12, MOVE_FURY_ATTACK),
+    LEVEL_UP_MOVE(15, MOVE_PURSUIT),
+    LEVEL_UP_MOVE(19, MOVE_WING_ATTACK),
+    // 19 pluck? wing attack
+    // 22 double hit?
+    LEVEL_UP_MOVE(26, MOVE_AGILITY),
+    LEVEL_UP_MOVE(29, MOVE_UPROAR),
+    // 33 accupressure?
+    LEVEL_UP_MOVE(36, MOVE_SWORDS_DANCE),
+    LEVEL_UP_MOVE(40, MOVE_JUMP_KICK),
+    // 40 lunge? jump kick
+    LEVEL_UP_MOVE(43, MOVE_DRILL_PECK),
+    LEVEL_UP_MOVE(47, MOVE_ENDEAVOR),
+    LEVEL_UP_MOVE(50, MOVE_THRASH),
     LEVEL_UP_END
 
-    // jump kick
+    // roost? recover
+    // echoed voice?
+    // tri attack
 };
 
 static const u16 sDodrioLevelUpLearnset[] = {
     LEVEL_UP_MOVE(1, MOVE_PECK),
     LEVEL_UP_MOVE(1, MOVE_GROWL),
-    LEVEL_UP_MOVE(1, MOVE_PURSUIT),
-    LEVEL_UP_MOVE(1, MOVE_FURY_ATTACK),
     LEVEL_UP_MOVE(5, MOVE_QUICK_ATTACK),
-    LEVEL_UP_MOVE(10, MOVE_RAGE),
-    LEVEL_UP_MOVE(14, MOVE_FURY_ATTACK),
-    LEVEL_UP_MOVE(19, MOVE_PURSUIT),
-    LEVEL_UP_MOVE(23, MOVE_UPROAR),
-    LEVEL_UP_MOVE(28, MOVE_AGILITY),
-    LEVEL_UP_MOVE(34, MOVE_TRI_ATTACK),
-    LEVEL_UP_MOVE(37, MOVE_DRILL_PECK),
-    LEVEL_UP_MOVE(41, MOVE_ENDEAVOR),
+    LEVEL_UP_MOVE(8, MOVE_RAGE),
+    LEVEL_UP_MOVE(12, MOVE_FURY_ATTACK),
+    LEVEL_UP_MOVE(15, MOVE_PURSUIT),
+    LEVEL_UP_MOVE(19, MOVE_WING_ATTACK),
+    // 19 pluck? wing attack
+    // 22 double hit?
+    LEVEL_UP_MOVE(26, MOVE_AGILITY),
+    LEVEL_UP_MOVE(29, MOVE_UPROAR),
+    LEVEL_UP_MOVE(31, MOVE_TRI_ATTACK),
+    // 34 accupressure?
+    LEVEL_UP_MOVE(38, MOVE_SWORDS_DANCE),
+    LEVEL_UP_MOVE(43, MOVE_JUMP_KICK),
+    // 43 lunge? jump kick
+    LEVEL_UP_MOVE(47, MOVE_DRILL_PECK),
+    LEVEL_UP_MOVE(52, MOVE_ENDEAVOR),
+    LEVEL_UP_MOVE(56, MOVE_THRASH),
     LEVEL_UP_END
+
+    // stomping tantrum?
 };
 
 static const u16 sSeelLevelUpLearnset[] = { // incomplete
     LEVEL_UP_MOVE(1, MOVE_HEADBUTT),
     LEVEL_UP_MOVE(3, MOVE_GROWL),
-    LEVEL_UP_MOVE(7, MOVE_WATER_SPORT),
+    LEVEL_UP_MOVE(7, MOVE_WATER_GUN),
     LEVEL_UP_MOVE(11, MOVE_ICY_WIND),
     LEVEL_UP_MOVE(13, MOVE_ENCORE),
-    LEVEL_UP_MOVE(17, MOVE_REST),
-    LEVEL_UP_MOVE(21, MOVE_WHIRLPOOL),
-    LEVEL_UP_MOVE(23, MOVE_AURORA_BEAM),
-    LEVEL_UP_MOVE(27, MOVE_TAKE_DOWN),
-    LEVEL_UP_MOVE(31, MOVE_DIVE),
-    LEVEL_UP_MOVE(33, MOVE_WATERFALL),
-    LEVEL_UP_MOVE(37, MOVE_ICE_BEAM),
-    LEVEL_UP_MOVE(41, MOVE_SAFEGUARD),
+    // 17 ice shard?
+    LEVEL_UP_MOVE(21, MOVE_REST),
+    // 23 aqua ring?
+    LEVEL_UP_MOVE(27, MOVE_AURORA_BEAM),
+    // 31 aqua jet?
+    // 33 brine?
+    LEVEL_UP_MOVE(37, MOVE_TAKE_DOWN),
+    LEVEL_UP_MOVE(41, MOVE_DIVE),
+    LEVEL_UP_MOVE(43, MOVE_WATERFALL),
+    // 43 aqua tail?
+    LEVEL_UP_MOVE(47, MOVE_ICE_BEAM),
+    LEVEL_UP_MOVE(51, MOVE_SAFEGUARD),
+    LEVEL_UP_MOVE(53, MOVE_HAIL),
     LEVEL_UP_END
+
+    // icicle spear
+    // lick
+    // belch?
+    // echoed voice?
+    // smart strike?
+    // drill run?
+    // whirlpool?
+    // peck?
+    // megahorn
 };
 
 static const u16 sDewgongLevelUpLearnset[] = {
-    LEVEL_UP_MOVE(1, MOVE_SIGNAL_BEAM),
     LEVEL_UP_MOVE(1, MOVE_HEADBUTT),
-    LEVEL_UP_MOVE(1, MOVE_ICY_WIND),
-    LEVEL_UP_MOVE(1, MOVE_AURORA_BEAM),
     LEVEL_UP_MOVE(3, MOVE_GROWL),
     LEVEL_UP_MOVE(7, MOVE_SIGNAL_BEAM),
     LEVEL_UP_MOVE(11, MOVE_ICY_WIND),
     LEVEL_UP_MOVE(13, MOVE_ENCORE),
-    LEVEL_UP_MOVE(17, MOVE_REST),
-    LEVEL_UP_MOVE(21, MOVE_WHIRLPOOL),
-    LEVEL_UP_MOVE(23, MOVE_AURORA_BEAM),
-    LEVEL_UP_MOVE(27, MOVE_TAKE_DOWN),
-    LEVEL_UP_MOVE(31, MOVE_DIVE),
-    LEVEL_UP_MOVE(33, MOVE_WATERFALL),
-    LEVEL_UP_MOVE(34, MOVE_SHEER_COLD),
-    LEVEL_UP_MOVE(37, MOVE_ICE_BEAM),
-    LEVEL_UP_MOVE(41, MOVE_SAFEGUARD),
+    // 17 ice shard?
+    LEVEL_UP_MOVE(21, MOVE_REST),
+    // 23 aqua ring?
+    LEVEL_UP_MOVE(27, MOVE_AURORA_BEAM),
+    // 31 aqua jet?
+    // 33 brine?
+    LEVEL_UP_MOVE(39, MOVE_TAKE_DOWN),
+    LEVEL_UP_MOVE(45, MOVE_DIVE),
+    LEVEL_UP_MOVE(49, MOVE_WATERFALL),
+    // 49 aqua tail?
+    LEVEL_UP_MOVE(55, MOVE_ICE_BEAM),
+    LEVEL_UP_MOVE(61, MOVE_SAFEGUARD),
+    LEVEL_UP_MOVE(65, MOVE_HAIL),
     LEVEL_UP_END
 };
 
 static const u16 sGrimerLevelUpLearnset[] = { // incomplete
-    LEVEL_UP_MOVE(1, MOVE_POISON_GAS),
     LEVEL_UP_MOVE(1, MOVE_POUND),
+    LEVEL_UP_MOVE(1, MOVE_POISON_GAS),
     LEVEL_UP_MOVE(4, MOVE_HARDEN),
     LEVEL_UP_MOVE(7, MOVE_MUD_SLAP),
     LEVEL_UP_MOVE(12, MOVE_DISABLE),
-    LEVEL_UP_MOVE(17, MOVE_MINIMIZE),
-    LEVEL_UP_MOVE(20, MOVE_SLUDGE),
-    LEVEL_UP_MOVE(23, MOVE_MUD_SHOT),
-    LEVEL_UP_MOVE(28, MOVE_KNOCK_OFF),
-    LEVEL_UP_MOVE(33, MOVE_SCREECH),
-    LEVEL_UP_MOVE(36, MOVE_SLUDGE_BOMB),
-    LEVEL_UP_MOVE(39, MOVE_ACID_ARMOR),
-    LEVEL_UP_MOVE(44, MOVE_MEMENTO),
+    LEVEL_UP_MOVE(15, MOVE_SLUDGE),
+    LEVEL_UP_MOVE(18, MOVE_MUD_SHOT),
+    LEVEL_UP_MOVE(21, MOVE_MINIMIZE),
+    LEVEL_UP_MOVE(26, MOVE_TOXIC),
+    LEVEL_UP_MOVE(29, MOVE_SLUDGE_BOMB),
+    // 32 sludge wave?
+    LEVEL_UP_MOVE(37, MOVE_SCREECH),
+    // 40 gunk shot?
+    LEVEL_UP_MOVE(43, MOVE_ACID_ARMOR),
+    // 46 belch?
+    LEVEL_UP_MOVE(48, MOVE_MEMENTO),
     LEVEL_UP_END
+
+    // confuse ray
+    // acid
+    // drain punch?
+    // infestation?
+    // shadow sneak?
+    // zap cannon?
+    // crunch?
 };
 
 static const u16 sMukLevelUpLearnset[] = {
-    LEVEL_UP_MOVE(1, MOVE_POISON_GAS),
     LEVEL_UP_MOVE(1, MOVE_POUND),
-    LEVEL_UP_MOVE(4, MOVE_HARDEN),
-    LEVEL_UP_MOVE(7, MOVE_MUD_SLAP),
+    LEVEL_UP_MOVE(1, MOVE_POISON_GAS),
+    LEVEL_UP_MOVE(1, MOVE_HARDEN),
+    LEVEL_UP_MOVE(1, MOVE_MUD_SLAP),
     LEVEL_UP_MOVE(12, MOVE_DISABLE),
-    LEVEL_UP_MOVE(17, MOVE_MINIMIZE),
-    LEVEL_UP_MOVE(20, MOVE_SLUDGE),
-    LEVEL_UP_MOVE(23, MOVE_MUD_SHOT),
-    LEVEL_UP_MOVE(28, MOVE_KNOCK_OFF),
-    LEVEL_UP_MOVE(33, MOVE_SCREECH),
-    LEVEL_UP_MOVE(36, MOVE_SLUDGE_BOMB),
-    LEVEL_UP_MOVE(44, MOVE_ACID_ARMOR),
-    LEVEL_UP_MOVE(54, MOVE_MEMENTO),
+    LEVEL_UP_MOVE(15, MOVE_SLUDGE),
+    LEVEL_UP_MOVE(18, MOVE_MUD_SHOT),
+    LEVEL_UP_MOVE(21, MOVE_MINIMIZE),
+    LEVEL_UP_MOVE(26, MOVE_TOXIC),
+    LEVEL_UP_MOVE(29, MOVE_SLUDGE_BOMB),
+    // 32 sludge wave?
+    LEVEL_UP_MOVE(37, MOVE_SCREECH),
+    // 40 gunk shot?
+    LEVEL_UP_MOVE(46, MOVE_ACID_ARMOR),
+    // 52 belch?
+    LEVEL_UP_MOVE(57, MOVE_MEMENTO),
     LEVEL_UP_END
+
+    // lunge?
 };
 
 static const u16 sShellderLevelUpLearnset[] = { // incomplete
     LEVEL_UP_MOVE(1, MOVE_TACKLE),
+    LEVEL_UP_MOVE(1, MOVE_WATER_GUN),
     LEVEL_UP_MOVE(4, MOVE_WITHDRAW),
-    LEVEL_UP_MOVE(8, MOVE_SUPERSONIC),
-    LEVEL_UP_MOVE(13, MOVE_ICICLE_SPEAR),
-    LEVEL_UP_MOVE(16, MOVE_PROTECT),
-    LEVEL_UP_MOVE(20, MOVE_LEER),
-    LEVEL_UP_MOVE(25, MOVE_CLAMP),
-    LEVEL_UP_MOVE(28, MOVE_AURORA_BEAM),
-    LEVEL_UP_MOVE(32, MOVE_WHIRLPOOL),
+    LEVEL_UP_MOVE(8, MOVE_ICICLE_SPEAR),
+    // 8 ice shard? icicle spear
+    LEVEL_UP_MOVE(12, MOVE_LEER),
+    LEVEL_UP_MOVE(16, MOVE_WHIRLPOOL),
+    LEVEL_UP_MOVE(20, MOVE_SUPERSONIC),
+    LEVEL_UP_MOVE(24, MOVE_AURORA_BEAM),
+    LEVEL_UP_MOVE(28, MOVE_PROTECT),
+    // 28 razor shell?
     LEVEL_UP_MOVE(37, MOVE_IRON_DEFENSE),
-    LEVEL_UP_MOVE(40, MOVE_SURF),
     LEVEL_UP_MOVE(44, MOVE_ICE_BEAM),
+    LEVEL_UP_MOVE(44, MOVE_CLAMP),
+    // 44 shell smash? clamp
+    LEVEL_UP_MOVE(48, MOVE_HYDRO_PUMP),
     LEVEL_UP_END
+
+    // mud shot
+    // rock blast
+    // twineedle
+    // rapid spin
+    // take down
+    // tri attack
+    // spikes?
 };
 
 static const u16 sCloysterLevelUpLearnset[] = {
+    LEVEL_UP_MOVE(1, MOVE_SPIKES),
     LEVEL_UP_MOVE(1, MOVE_WITHDRAW),
     LEVEL_UP_MOVE(1, MOVE_SUPERSONIC),
     LEVEL_UP_MOVE(1, MOVE_AURORA_BEAM),
@@ -1951,62 +2107,88 @@ static const u16 sCloysterLevelUpLearnset[] = {
     LEVEL_UP_MOVE(28, MOVE_SPIKES),
     LEVEL_UP_MOVE(40, MOVE_SPIKE_CANNON),
     LEVEL_UP_END
-    // rock blast
+    
     // signal beam
-    // twin needle
     // pin missile
+    // smart strike
+    // poison jab? poison tail
+    // weather ball
+    // drill run?
+    // icicle spear
+    // clamp
+    // take down
+    // rapid spin
+    // headbutt
 };
 
 static const u16 sGastlyLevelUpLearnset[] = { // incomplete
-    LEVEL_UP_MOVE(1, MOVE_HYPNOSIS),
     LEVEL_UP_MOVE(1, MOVE_LICK),
-    LEVEL_UP_MOVE(5, MOVE_SPITE),
+    LEVEL_UP_MOVE(1, MOVE_CONFUSE_RAY),
+    LEVEL_UP_MOVE(4, MOVE_HYPNOSIS),
     LEVEL_UP_MOVE(8, MOVE_MEAN_LOOK),
-    LEVEL_UP_MOVE(12, MOVE_CURSE),
-    LEVEL_UP_MOVE(15, MOVE_NIGHT_SHADE),
-    LEVEL_UP_MOVE(19, MOVE_CONFUSE_RAY),
-    LEVEL_UP_MOVE(22, MOVE_PURSUIT),
-    LEVEL_UP_MOVE(26, MOVE_SHADOW_BALL),
-    LEVEL_UP_MOVE(29, MOVE_DREAM_EATER),
-    LEVEL_UP_MOVE(33, MOVE_FAINT_ATTACK),
-    LEVEL_UP_MOVE(36, MOVE_DESTINY_BOND),
-    LEVEL_UP_MOVE(40, MOVE_NIGHTMARE),
+    // 12 payback?
+    LEVEL_UP_MOVE(16, MOVE_SPITE),
+    LEVEL_UP_MOVE(20, MOVE_CURSE),
+    // 24 hex?
+    LEVEL_UP_MOVE(28, MOVE_NIGHT_SHADE),
+    // 32 sucker punch?
+    // 36 dark pulse?
+    // LEVEL_UP_MOVE(22, MOVE_PURSUIT),
+    LEVEL_UP_MOVE(40, MOVE_SHADOW_BALL),
+    LEVEL_UP_MOVE(44, MOVE_DESTINY_BOND),
+    LEVEL_UP_MOVE(48, MOVE_DREAM_EATER),
     LEVEL_UP_END
+
+    // poison jab? poison tail
+    // imprison
+    // gunk shot?
+    // will-o-wisp
+    // energy ball?
+    // reflect type?
+    // skitter smack?
+    // ominous wind?
+    // infestation?
 };
 
 static const u16 sHaunterLevelUpLearnset[] = {
-    LEVEL_UP_MOVE(1, MOVE_HYPNOSIS),
     LEVEL_UP_MOVE(1, MOVE_LICK),
-    LEVEL_UP_MOVE(5, MOVE_SPITE),
-    LEVEL_UP_MOVE(8, MOVE_MEAN_LOOK),
-    LEVEL_UP_MOVE(12, MOVE_CURSE),
-    LEVEL_UP_MOVE(15, MOVE_NIGHT_SHADE),
-    LEVEL_UP_MOVE(19, MOVE_CONFUSE_RAY),
-    LEVEL_UP_MOVE(22, MOVE_PURSUIT),
+    LEVEL_UP_MOVE(1, MOVE_CONFUSE_RAY),
+    LEVEL_UP_MOVE(1, MOVE_HYPNOSIS),
+    LEVEL_UP_MOVE(1, MOVE_MEAN_LOOK),
+    // 12 payback?
+    LEVEL_UP_MOVE(16, MOVE_SPITE),
+    LEVEL_UP_MOVE(20, MOVE_CURSE),
+    // 24 hex?
     LEVEL_UP_MOVE(25, MOVE_SHADOW_PUNCH),
-    LEVEL_UP_MOVE(28, MOVE_SHADOW_BALL),
-    LEVEL_UP_MOVE(33, MOVE_DREAM_EATER),
-    LEVEL_UP_MOVE(39, MOVE_FAINT_ATTACK),
-    LEVEL_UP_MOVE(44, MOVE_DESTINY_BOND),
-    LEVEL_UP_MOVE(50, MOVE_NIGHTMARE),
+    LEVEL_UP_MOVE(30, MOVE_NIGHT_SHADE),
+    // 36 sucker punch?
+    // 42 dark pulse?
+    // LEVEL_UP_MOVE(22, MOVE_PURSUIT),
+    LEVEL_UP_MOVE(48, MOVE_SHADOW_BALL),
+    LEVEL_UP_MOVE(54, MOVE_DESTINY_BOND),
+    LEVEL_UP_MOVE(60, MOVE_DREAM_EATER),
     LEVEL_UP_END
+
+    // shadow claw
 };
 
 static const u16 sGengarLevelUpLearnset[] = {
-    LEVEL_UP_MOVE(1, MOVE_HYPNOSIS),
     LEVEL_UP_MOVE(1, MOVE_LICK),
-    LEVEL_UP_MOVE(5, MOVE_SPITE),
-    LEVEL_UP_MOVE(8, MOVE_MEAN_LOOK),
-    LEVEL_UP_MOVE(12, MOVE_CURSE),
-    LEVEL_UP_MOVE(15, MOVE_NIGHT_SHADE),
-    LEVEL_UP_MOVE(19, MOVE_CONFUSE_RAY),
-    LEVEL_UP_MOVE(22, MOVE_PURSUIT),
+    LEVEL_UP_MOVE(1, MOVE_CONFUSE_RAY),
+    LEVEL_UP_MOVE(1, MOVE_HYPNOSIS),
+    LEVEL_UP_MOVE(1, MOVE_MEAN_LOOK),
+    // 12 payback?
+    LEVEL_UP_MOVE(16, MOVE_SPITE),
+    LEVEL_UP_MOVE(20, MOVE_CURSE),
+    // 24 hex?
     LEVEL_UP_MOVE(25, MOVE_SHADOW_PUNCH),
-    LEVEL_UP_MOVE(28, MOVE_SHADOW_BALL),
-    LEVEL_UP_MOVE(33, MOVE_DREAM_EATER),
-    LEVEL_UP_MOVE(39, MOVE_FAINT_ATTACK),
-    LEVEL_UP_MOVE(44, MOVE_DESTINY_BOND),
-    LEVEL_UP_MOVE(50, MOVE_NIGHTMARE),
+    LEVEL_UP_MOVE(30, MOVE_NIGHT_SHADE),
+    // 36 sucker punch?
+    // 42 dark pulse?
+    // LEVEL_UP_MOVE(22, MOVE_PURSUIT),
+    LEVEL_UP_MOVE(48, MOVE_SHADOW_BALL),
+    LEVEL_UP_MOVE(54, MOVE_DESTINY_BOND),
+    LEVEL_UP_MOVE(60, MOVE_DREAM_EATER),
     LEVEL_UP_END
 };
 
@@ -2015,20 +2197,38 @@ static const u16 sOnixLevelUpLearnset[] = { // incomplete
     LEVEL_UP_MOVE(1, MOVE_TACKLE),
     LEVEL_UP_MOVE(1, MOVE_HARDEN),
     LEVEL_UP_MOVE(1, MOVE_BIND),
-    LEVEL_UP_MOVE(6, MOVE_SCREECH),
-    LEVEL_UP_MOVE(9, MOVE_ROCK_THROW),
-    LEVEL_UP_MOVE(14, MOVE_RAGE),
-    LEVEL_UP_MOVE(17, MOVE_ROCK_TOMB),
-    LEVEL_UP_MOVE(22, MOVE_SANDSTORM),
-    LEVEL_UP_MOVE(25, MOVE_SLAM),
-    LEVEL_UP_MOVE(30, MOVE_AGILITY),
-    LEVEL_UP_MOVE(33, MOVE_DRAGON_BREATH),
-    LEVEL_UP_MOVE(38, MOVE_CURSE),
-    LEVEL_UP_MOVE(41, MOVE_IRON_TAIL),
-    LEVEL_UP_MOVE(46, MOVE_SAND_TOMB),
-    LEVEL_UP_MOVE(49, MOVE_DOUBLE_EDGE),
-    LEVEL_UP_MOVE(54, MOVE_ROCK_SLIDE),
+    LEVEL_UP_MOVE(1, MOVE_ROCK_THROW),
+    LEVEL_UP_MOVE(4, MOVE_RAGE),
+    // 4 smack down? rage
+    LEVEL_UP_MOVE(8, MOVE_AGILITY),
+    // 8 rock polish? agility
+    LEVEL_UP_MOVE(12, MOVE_DRAGON_BREATH),
+    LEVEL_UP_MOVE(16, MOVE_CURSE),
+    LEVEL_UP_MOVE(20, MOVE_ROCK_SLIDE),
+    LEVEL_UP_MOVE(24, MOVE_SCREECH),
+    LEVEL_UP_MOVE(28, MOVE_SAND_TOMB),
+    // 32 stealth rock? spikes
+    LEVEL_UP_MOVE(36, MOVE_SLAM),
+    LEVEL_UP_MOVE(40, MOVE_SANDSTORM),
+    LEVEL_UP_MOVE(44, MOVE_DIG),
+    LEVEL_UP_MOVE(48, MOVE_IRON_TAIL),
+    // 52 stone edge?
+    LEVEL_UP_MOVE(56, MOVE_DOUBLE_EDGE),
+    // LEVEL_UP_MOVE(17, MOVE_ROCK_TOMB),
     LEVEL_UP_END
+
+    // stomping tantrum?
+    // breaking swipe?
+    // dragon dance
+    // dragon pulse?
+    // drill run?
+    // body press?
+    // head smash?
+    // rock blast?
+    // scorching sands?
+    // meteor beam?
+    // ancient power
+    // twister
 };
 
 static const u16 sDrowzeeLevelUpLearnset[] = { // incomplete

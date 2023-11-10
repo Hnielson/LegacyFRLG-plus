@@ -75,6 +75,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 // .. drill run (high_crit)
 // .. ominous wind (silver_wind)
 // .. echoed voice (fury_cutter)
+// .. steam roller (flinch_minimize)
 
 {
     [MOVE_NONE] =
